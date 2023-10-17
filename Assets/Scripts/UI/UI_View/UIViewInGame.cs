@@ -9,7 +9,9 @@ public class UIViewInGame : UIView
     [SerializeField] private RectTransform inGame;
     [SerializeField] private TextMeshProUGUI timeText;
     
-    private float gameTime = 600;
+    private float gameTime = 300;
+
+    public RectTransform pnlWin;
     public bool isGameRunning = false;
 
     private void Update()

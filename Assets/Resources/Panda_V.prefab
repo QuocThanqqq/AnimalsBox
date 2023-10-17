@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4009491472501265145}
   m_Layer: 0
   m_Name: Panda_V
-  m_TagString: Untagged
+  m_TagString: Animals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
