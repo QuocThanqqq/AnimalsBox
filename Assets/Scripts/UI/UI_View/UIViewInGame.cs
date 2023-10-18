@@ -3,16 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class UIViewInGame : UIView
 {
-    [SerializeField] private RectTransform inGame;
-    [SerializeField] private TextMeshProUGUI timeText;
-    
-    private float gameTime = 300;
+    [SerializeField] private RectTransform viewIngame;
 
-    public RectTransform pnlWin;
+
+    [Header("Time")]
+    [SerializeField] private TextMeshProUGUI timeText;
+    public float gameTime;
     public bool isGameRunning = false;
+    
+    [Header("Level")]
+    public TextMeshProUGUI levelText;
+    
+    [Header("PNL WIN/LOSE")]
+    public RectTransform pnlWin;
+    public RectTransform pnlLose;
+    
+    [Header("BOT")]
+    public List<Image> imageAnimals = new List<Image>();
+    public Sprite defaultImage;
 
     private void Update()
     {

@@ -21,7 +21,6 @@ public class AnimalsSpawn : MonoBehaviour
     {
         if (waveIndex < 0 || waveIndex >= animalsWaves.Length)
         {
-   
             return;
         }
 
@@ -30,7 +29,7 @@ public class AnimalsSpawn : MonoBehaviour
         {
             for (int i = 0; i < animalData.Quantity; i++)
             {
-                Vector3 spawnPosition = new Vector3(Random.Range(-5f, -1f), 0, Random.Range(-5f, -1f));
+                Vector3 spawnPosition = new Vector3(Random.Range(-5f, -1f), 2, Random.Range(-5f, -1f));
                 GameObject spawnedAnimal = Instantiate(animalData.animalPrefab, spawnPosition, Quaternion.identity);
                 spawnedAnimalsList.Add(spawnedAnimal);
             }

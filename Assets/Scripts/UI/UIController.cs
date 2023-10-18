@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UIController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class UIController : MonoBehaviour
         Instance = this;
     }
 
-    public UIViewMainMenu ViewMainMenu;
-    public UIViewInGame ViewInGame;
+    public UIViewMainMenu viewMainMenu;
+    public UIViewInGame viewInGame;
+    public UIViewCountToPlay viewCountToPlay;
+
 }
