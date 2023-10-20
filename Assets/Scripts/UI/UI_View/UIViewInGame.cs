@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class UIViewInGame : UIView
     [SerializeField] private TextMeshProUGUI timeText;
     public float gameTime;
     public bool isGameRunning = false;
+ 
     
     [Header("Level")]
     public TextMeshProUGUI levelText;
@@ -31,13 +33,14 @@ public class UIViewInGame : UIView
     {
         if (isGameRunning)
         {
-            gameTime -= Time.deltaTime; // Tăng thời gian theo giây
+            gameTime -= Time.deltaTime;
             UpdateTimeText();
             
             if (gameTime <= 0)
             {
-                isGameRunning = false;
-                Debug.Log("Over Time");
+                isGameRunning = false;     
+                gameTime = 0;
+                SceneManager.LoadScene("GamePlay");
             }
         }
     }

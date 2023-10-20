@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-   
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -29,13 +29,13 @@ public class GameController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                
+
                 GameObject hitObject = hit.collider.gameObject;
                 if (hitObject.CompareTag("Animals"))
                 {
                     animalsPick.Add(hitObject);
                     hitObject.SetActive(false);
-                    
+
                     // Find Sprite
                     Transform spriteObject = hitObject.transform.Find("Sprite");
                     if (spriteObject != null)
@@ -46,8 +46,8 @@ public class GameController : MonoBehaviour
                             animalSprites.Add(spriteRenderer.sprite);
                         }
                     }
-                } 
-                
+                }
+
             }
 
             ///Check Point
@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
             }
 
             ///Check Lose
-            if (animalsPick.Count >= 6)
+            if (animalsPick.Count >= 6 || UIController.Instance.viewInGame.gameTime <= 0)
             {
                 UIController.Instance.viewInGame.pnlLose.gameObject.SetActive(true);
                 UIController.Instance.viewInGame.isGameRunning = false;
