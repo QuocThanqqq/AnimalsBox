@@ -2426,7 +2426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: 0671e671fb2d576458657c53c7317ea4, type: 2}
-  timeLv1: 10
+  timeLv1: 100
   timeLv2: 200
   timeLv3: 300
   currentLevel: 0
